@@ -1,0 +1,105 @@
+//Ксюха
+//	   Ты		 	
+//		 Самая
+//		      Клаааассснааяя
+//							И
+//							 Не
+//							   Выебывайся
+
+#include <iostream>
+#include <random>
+#include <ctime>
+
+int main()
+{
+	int userNumber{ 0 };
+	int theNumber{ 0 };
+	bool gameOver{ false };
+	int remaining{ 3 };
+
+
+
+
+
+#ifdef _DEBUG
+	std::srand(10u);
+#else
+	std::srand(static_cast<unsigned>(std::time(nullptr)));
+#endif
+
+	theNumber = (std::rand() % 10) + 1;
+
+	std::cout << "GOOD MORNING KSUHA, ja thought of one number davaj posmotrim if you can guess ego." << std::endl;
+	std::cout << std::endl;
+	while (!gameOver) // same as gameOver == false
+	{
+		std::cin >> userNumber;
+
+
+		if (userNumber == 69)
+		{
+			std::cout << std::endl;
+			std::cout << "WINNER WINNER MAGIC NUMBER SPINNER" << std::endl;
+			std::cout << std::endl;
+			gameOver = true;
+		}
+
+		else
+		{
+			if (userNumber > 10)
+			{
+				if (userNumber > 10)
+
+				std::cout << std::endl;
+				std::cout << "EPTA viberi number only ot 1 do 10 ksuha " << std::endl;
+				std::cout << std::endl;
+			}
+		}
+
+
+		if (theNumber == userNumber)
+		{
+			std::cout << std::endl;
+			std::cout << "Ja zagadal " << theNumber << " i ti ego guessed, you will get nichego za eto lowara. igraj more" << std::endl;
+			std::cout << std::endl;
+			std::cout << "raz ti won poprobuj ewo. eta igra is very easy as it has only 10 numbers range" << std::endl;
+			std::cout << std::endl;
+			std::cout <<"esli hochesh harder I will make with 1000 range zajka " << std::endl;
+			gameOver = true;
+		}
+
+		if (userNumber <= 10)
+		{
+			if (theNumber != userNumber)
+			{
+				std::cout << std::endl;
+				std::cout << "You are wrong ksuha probuj more" << std::endl;
+				std::cout << std::endl;
+
+
+				if (userNumber <= 10)
+				{
+					remaining = remaining - 1;
+					if (remaining <= 0)
+					{
+						std::cout << std::endl;
+						std::cout << "loshara I forgot skaztj tebe you only estj 3 popitki and u tebja no more tries left, get some milk." << std::endl;
+						std::cout << std::endl;
+						gameOver = true;
+					}
+				}
+			}
+
+		}
+
+	}
+
+
+
+
+
+
+	system("pause");
+
+	return 1;
+}
